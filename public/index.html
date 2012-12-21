@@ -1,0 +1,97 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sparta Cup</title>
+    <meta name="description" content="">
+    <meta name="author" content="Sparta Cup">
+    <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!-- For iPhone 4 with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/images/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-startup-image" href="assets/images/apple-touch-icon-114-precomposed.png">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="lungojs/lungo-1.2.min.css">
+    <link rel="stylesheet" href="lungojs/lungo.theme.default.css">
+    <!-- App Stylesheet -->
+    <link rel="stylesheet" href="assets/stylesheets/app.css">
+</head>
+
+<body class="app">
+    <section id="s-main">
+      <header data-title="Sparta Cup">
+      </header>
+      <article id="a-main" class="list scrollable indented rounded">
+        <ul>
+          <li>
+            <b>Sparta Cup</b>
+            <img src="assets/images/logospartacup.jpg" class="onright">
+            <small>Torneig internacional de hockey linia</small>           
+          </li>
+          <li data-icon="items" class="selectable">
+            <a href="#" id="go-new-items" >
+              Notícies
+              <div class="onright" style="margin-top: 10px;"><span class="icon mini right"></span></div>
+              <small>Descubreix les últimes novetats</small>
+            </a>
+          </li>
+          <li data-icon="info" class="selectable">
+            <a href="#s-stats" data-target="section" id="go-stats" data-title="Torneig">
+              Torneig
+              <div class="onright" style="margin-top: 10px;"><span class="icon mini right"></span></div>
+              <small>Resultats i classifacions amb temps real</small>
+            </a>
+          </li>
+          <li data-icon="camera" class="selectable">
+            <a href="#s-videos" data-target="section">
+              Sparta TV
+              <div class="onright" style="margin-top: 10px;"><span class="icon mini right"></span></div>
+              <small>Partits de la Sparta amb un click</small>
+            </a>
+          </li>
+         <li data-icon="star" class="selectable">
+            <a href="#s-stars" data-target="section" id="go-stars">
+              Stars
+              <div class="onright" style="margin-top: 10px;"><span class="icon mini right"></span></div>
+              <small>Estrelles mundials juguen la Sparta Cup</small>
+            </a>
+          </li>
+          <li data-icon="basket" class="selectable">
+            <a href="#" id="go-shop">
+              Botiga
+              <div class="onright" style="margin-top: 10px;"><span class="icon mini right"></span></div>
+              <small>Els nostres productes</small>
+            </a>
+          </li>
+          <li data-icon="tag" class="selectable">
+            <a href="#s-sponsors" data-target="section" id="go-sponsors">
+              Sponsors
+              <div class="onright" style="margin-top: 10px;"><span class="icon mini right"></span></div>
+              <small>Els nostres sponsors</small>
+            </a>
+          </li> 
+            
+        </ul>
+      </article>
+
+    </section>
+
+     <!-- LungoJS (Production mode) -->
+    <script src="lungojs/lungo-1.2.packed.js"></script>
+    <!-- LungoJS - Sandbox App -->
+    <script src="app/app.js"></script>
+    <script src="app/events.js"></script>
+    <script src="app/view.js"></script>
+    <script src="app/data.js"></script>
+    <script src="app/services.js"></script>
+    
+   
+</body>
+</html>
