@@ -1,6 +1,7 @@
 use Rack::Static, 
   :urls => ["/assets/images", 
             "/assets/stylesheets", 
+            "/assets/add2home",
             "/app/sections",
             "/app/templates",
             "/app",
