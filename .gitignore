@@ -8,32 +8,7 @@
 .DS_Store
 .bundle
 
-# Ignore the default SQLite database.
-db/*.sqlite3
-db/schema.rb
-db/development_structure.sql
-db/*.sql
-db/seeds_old.rb
-config/database.yml
-
-# Ignore all logfiles and tempfiles.
-log/*.log
-log/*
-tmp
-tmp/*
-
-
-/public/cache
-/public/stylesheets/compiled
-/public/system
-
-public/system
-public/assets
-
-config/deploy.rb
-config/amazon_s3.yml
-config/environments/development.rb
-config/environments/test.rb
+  
  
 .rvmrc
 .project
