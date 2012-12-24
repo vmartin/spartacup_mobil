@@ -6,8 +6,6 @@ App.Events = (function(lng, undefined) {
   });
 
   lng.dom("a#go-new-items").tap(function(event){
-    lng.Router.section("#s-news");
-    lng.Router.article("#s-news", "a-news");
     App.Services.GetNewItems();
   });
   
@@ -22,8 +20,8 @@ App.Events = (function(lng, undefined) {
   });
   
   lng.dom("a#go-shop").tap(function(event){
-    lng.Router.section("#s-shop");
-    lng.Router.article("#s-shop", "a-products");
+   // lng.Router.section("#s-shop");
+   // lng.Router.article("#s-shop", "a-products");
     App.Services.GetProducts();
   });
   
