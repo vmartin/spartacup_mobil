@@ -364,9 +364,6 @@ App.Services = (function(lng, App, undefined) {
             data: response.data.current_match,
             scroll_to: 'none'
           });
-//          if (b_play == true){
-//            play('drip'); 
-//          };
         };
       });      
     };
