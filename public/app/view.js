@@ -148,7 +148,30 @@ App.View = (function(lng, App, undefined) {
                                   </table>\
                                </li>'
                                );
-                               
+     lng.View.Template.create('current-match-tmp',
+                               '<li id="current_match">\
+                                  <div class="onright count bubble" >Actualitzat: {{last_request_at_hour}}</div>\
+                                  En aquest moments:\
+                                  <small>{{description}}</small>\
+                                  <table width="100%">\
+                                    <tr>\
+                                      <td class="value-stats" width="35%">\
+                                         <img  src="{{local_team_logo_medium}}" alt="{{local_team_name}}" class="match"></td>\
+                                      <td class="center middle"  width="30%"><b>vs</b></td>\
+                                      <td class="value-stats" width="35%">\
+                                         <img  src="{{visitor_team_logo_medium}}" alt="{{visitor_team_name}}" class="match"></td>\
+                                      </td>\
+                                    </tr>\
+                                    <tr>\
+                                      <td class="match_result">{{local_team_goals}}</td>\
+                                      <td class="center middle" >\
+                                        <div class="count bubble">Gol: {{last_goal}}</div>\
+                                      </td>\
+                                      <td class="match_result">{{visitor_team_goals}}</td>\
+                                    </tr>\
+                                  </table>\
+                                  <a href="#" class="button big " id="refresh_match"><span class="icon refresh" style="float:none;"></span><abbr>Refrescar</abbr></a>\
+                               </li>');                           
 
     return {
      

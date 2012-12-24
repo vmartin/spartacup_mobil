@@ -87,20 +87,23 @@
 
      <!-- LungoJS (Production mode) -->
     <script src="lungojs/lungo-1.2.packed.js"></script>
-    <!-- LungoJS - Sandbox App -->
-    <script src="app/app.js"></script>
-    <script src="app/events.js"></script>
-    <script src="app/view.js"></script>
-    <script src="app/data.js"></script>
-    <script src="app/services.js"></script>
+    <!-- LungoJS - Sandbox App  development 
+      <script src="app/app.js"></script>
+      <script src="app/events.js"></script>
+      <script src="app/view.js"></script>
+      <script src="app/data.js"></script>
+      <script src="app/services.js"></script>-->
    
-    <script type="text/javascript">
-      var addToHomeConfig = {
-       
-	      expire: 2,
-	      touchIcon:true
-      };
+    <!-- LungoJS - Sandbox App  production -->
+      <script src="app/spartacup-0.1.packed.js"></script>
+      <script type="text/javascript">
+        var addToHomeConfig = {
+          expire: 1,
+          touchIcon:true
+        };
       </script> 
-    <script src="assets/add2home/add2home-min.js"></script>
+      <script src="assets/add2home/add2home-min.js"></script>
+ 
+      
 </body>
 </html>

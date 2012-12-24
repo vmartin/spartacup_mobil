@@ -1,8 +1,15 @@
 App.Events = (function(lng, undefined) {
 
+  var handle_timer = null;
+  var TIMER_INTERVAL = 60000;
+
   lng.dom("#play_video").tap(function(event){
     var element = lng.dom("#video");
     element[0].play();
+  });
+  lng.dom("#play_video").tap(function(event){
+    var element = lng.dom("#video");
+    element[0].pause();
   });
 
   lng.dom("a#go-new-items").tap(function(event){
@@ -63,7 +70,18 @@ App.Events = (function(lng, undefined) {
     element.children().remove();
   });
   
+  lng.dom("#refresh_match").tap(function(event){
+    App.Services.GetCurrentMatch();
+  }); 
  
+  lng.dom("#go-home-stats").tap(function(event){
+    if ( handle_timer != null ){
+      window.clearInterval(handle_timer);
+    };
+  });
+  lng.dom("#go-stats").tap(function(event){
+    handle_timer = window.setInterval('App.Services.GetCurrentMatch(true)', TIMER_INTERVAL);
+  });
     
 
 })(LUNGO);

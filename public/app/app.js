@@ -14,18 +14,25 @@ var App = (function(lng, undefined) {
             'videos.html']
         }
     });
-    
-
-    var _getEnvironmentFromQuoJS = (function() {
-        var environment = lng.Core.environment();
-        if (environment.isMobile) {
-           // alert('Your phone is ' + environment.os.name + ' (' + environment.os.version + ')');
-        }
-    })();
-
-
     return {
 
     };
 
 })(LUNGO);
+
+
+//function play(sound) {
+//				
+//				  if (window.HTMLAudioElement) {
+//					  var snd = new Audio('');
+//					
+//					  if(snd.canPlayType('audio/ogg')) {
+//						  snd = new Audio(document.location.protocol+'//' + document.location.hostname+(document.location.port ? ':' + document.location.port: '') + '/assets/sounds/' + sound + '.ogg');
+//					  }
+//					  else if(snd.canPlayType('audio/mp3')) {
+//						  snd = new Audio(document.location.protocol+'//' + document.location.hostname+(document.location.port ? ':' + document.location.port: '') + '/assets/sounds/' + sound + '.mp3');
+//					  }
+//					
+//					  snd.play();
+//				  }
+//			  }

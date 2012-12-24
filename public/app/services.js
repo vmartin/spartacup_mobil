@@ -1,18 +1,21 @@
 App.Services = (function(lng, App, undefined) {
      
 
-    //const API_DOMAIN = 'http://192.168.1.128:3000'
-    const API_DOMAIN = 'http://www.spartacup.com'
-    const API_NEW_ITEMS_URL = API_DOMAIN + '/api/new_items/get_items'
-    const API_NEW_ITEM_URL = API_DOMAIN + '/api/new_items/get_item'
-    const API_PRODUCTS_URL = API_DOMAIN + '/api/products/get_items'
-    const API_PRODUCT_URL = API_DOMAIN + '/api/products/get_item'
-    const API_STARS_URL = API_DOMAIN + '/api/stars/get_items'
-    const API_SPONSORS_URL = API_DOMAIN + '/api/sponsors/get_items'
-    const API_STATS_INFO_URL = API_DOMAIN + '/api/stats/get_info'
-    const API_STATS_URL = API_DOMAIN + '/api/stats/get_stats'
-    const API_MATCHES_URL = API_DOMAIN + '/api/stats/get_matches'
+    //var API_DOMAIN = 'http://192.168.1.128:3000'
+    var API_DOMAIN = 'http://www.spartacup.com'
+    var API_NEW_ITEMS_URL = API_DOMAIN + '/api/new_items/get_items'
+    var API_NEW_ITEM_URL = API_DOMAIN + '/api/new_items/get_item'
+    var API_PRODUCTS_URL = API_DOMAIN + '/api/products/get_items'
+    var API_PRODUCT_URL = API_DOMAIN + '/api/products/get_item'
+    var API_STARS_URL = API_DOMAIN + '/api/stars/get_items'
+    var API_SPONSORS_URL = API_DOMAIN + '/api/sponsors/get_items'
+    var API_STATS_INFO_URL = API_DOMAIN + '/api/stats/get_info'
+    var API_STATS_URL = API_DOMAIN + '/api/stats/get_stats'
+    var API_MATCHES_URL = API_DOMAIN + '/api/stats/get_matches'
+    var API_CURRENT_MATCH_URL = API_DOMAIN + '/api/stats/get_current_match'
 
+    var home_goals = undefined;
+    var visitor_goals = undefined;
     
     var get_new_items = function(){
       var url = API_NEW_ITEMS_URL;
@@ -21,7 +24,7 @@ App.Services = (function(lng, App, undefined) {
           timestamp: time_stamp
       };
       lng.Service.get(url,data, function(response){
-        console.error(response.data); 
+    
         lng.View.Template.List.create({
            el: '#a-news', 
            template: 'new-items-tmp', 
@@ -39,7 +42,7 @@ App.Services = (function(lng, App, undefined) {
           id: p_id
       };
       lng.Service.get(url,data, function(response){
-        console.error(response.data); 
+ 
         lng.View.Template.List.create({
            el: '#a-new', 
            template: 'new-item-tmp', 
@@ -194,7 +197,7 @@ App.Services = (function(lng, App, undefined) {
             data: {'mock':''},
             scroll_to: 'none' 
           });
-          
+          _get_and_render_current_match(false);
         });
        }else{
           lng.View.Template.List.create({
@@ -208,9 +211,35 @@ App.Services = (function(lng, App, undefined) {
             template: "stats-pool-menu-tmp",
             data: {'mock':''},
             scroll_to: 'none'
-          });          
-       }
+          });  
+          _get_and_render_current_match(false);         
+       };
     };
+    
+    var _get_and_render_current_match = function(b_play){
+      var data = {
+        timestamp : new Date().getTime()
+      };
+      lng.Service.get(API_CURRENT_MATCH_URL,data, function(response){
+        try{
+          lng.dom('#current_match').remove();
+        }catch(err){
+          //do-nothing
+        };
+        if (response.data.any_match == true){
+          lng.View.Template.List.append({
+            el: "#a-stats-menu",
+            template: "current-match-tmp",
+            data: response.data.current_match,
+            scroll_to: 'none'
+          });
+//          if (b_play == true){
+//            play('drip'); 
+//          };
+        };
+      });      
+    };
+    
     var get_stats = function(){
       var url = API_STATS_URL;
       var time_stamp = new Date().getTime();
@@ -241,7 +270,7 @@ App.Services = (function(lng, App, undefined) {
               scroll_to: 'none'
             });          
           };
-        };
+        };    
       });
     };
 
@@ -253,7 +282,6 @@ App.Services = (function(lng, App, undefined) {
           timestamp: time_stamp
       };
       lng.Service.get(url,data, function(response){
-        console.error(response.data);
         lng.View.Template.List.create({
           el: "#a-matches",
           template: 'matches-tmp',
@@ -282,7 +310,8 @@ App.Services = (function(lng, App, undefined) {
       GetSponsors: get_sponsors,
       GetTournamentInfo: get_info,
       GetStats: get_stats,
-      GetMatches: get_matches
+      GetMatches: get_matches,
+      GetCurrentMatch: _get_and_render_current_match
     }
 
 })(LUNGO, App);
