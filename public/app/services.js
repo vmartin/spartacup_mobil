@@ -141,7 +141,6 @@ App.Services = (function(lng, App, undefined) {
           lng.Data.Storage.session('sponsors',response.data);
           lng.dom('article#a-sponsors ul li').remove();
           create_sponsors(response.data);  
- 
         });
       }else{
         if (lng.dom('article#a-sponsors ul li').length == 0){

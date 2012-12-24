@@ -163,11 +163,11 @@ App.View = (function(lng, App, undefined) {
                                       </td>\
                                     </tr>\
                                     <tr>\
-                                      <td class="match_result">{{local_team_goals}}</td>\
+                                      <td class="match_result" id="home_goals">{{local_team_goals}}</td>\
                                       <td class="center middle" >\
                                         <div class="count bubble">Gol: {{last_goal}}</div>\
                                       </td>\
-                                      <td class="match_result">{{visitor_team_goals}}</td>\
+                                      <td class="match_result" id="visitor_goals">{{visitor_team_goals}}</td>\
                                     </tr>\
                                   </table>\
                                   <a href="#" class="button big " id="refresh_match"><span class="icon refresh" style="float:none;"></span><abbr>Refrescar</abbr></a>\
