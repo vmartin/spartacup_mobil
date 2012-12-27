@@ -627,7 +627,7 @@ App.View = (function(lng, App, undefined) {
      lng.View.Template.create('matches-tmp',
                               '<li>\
                                   <div class="onright count bubble" >{{time}}</div>\
-                                  <small>{{description}}</small>\
+                                  <small>#{{match_num}} - {{description}}</small>\
                                   <table width="100%">\
                                     <tr>\
                                       <td class="value-stats" width="40%">\
@@ -649,7 +649,7 @@ App.View = (function(lng, App, undefined) {
                                '<li id="current_match">\
                                   <div class="onright count bubble" >Actualitzat: {{last_request_at_hour}}</div>\
                                   En aquest moments:\
-                                  <small>{{description}}</small>\
+                                  <small>#{{match_num}} - {{description}}</small>\
                                   <table width="100%">\
                                     <tr>\
                                       <td class="value-stats" width="35%">\
