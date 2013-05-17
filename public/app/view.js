@@ -113,8 +113,8 @@ App.View = (function(lng, App, undefined) {
                                 <table width="100%" border="1">\
                                   <tr>\
                                     <td width="16%"><img src="{{team_logo_mini}}"></td>\
-                                    <td width="8%" class="value-stats">{{win}}</td>\
                                     <td width="8%" class="value-stats">{{played}}</td>\
+                                    <td width="8%" class="value-stats">{{points}}</td>\
                                     <td width="8%" class="value-stats">{{win}}</td>\
                                     <td width="8%" class="value-stats">{{lose}}</td>\
                                     <td width="8%" class="value-stats">{{tied}}</td>\
