@@ -9,14 +9,7 @@ App.Events = (function(lng, undefined) {
   var init_shop = false;
   var init_sponsors = false;
   
-  lng.dom("#play_video").tap(function(event){
-    var element = lng.dom("#video");
-    element[0].play();
-  });
-  lng.dom("#play_video").tap(function(event){
-    var element = lng.dom("#video");
-    element[0].pause();
-  });
+
 
   lng.dom("a#go-new-items").tap(function(event){
     init_news = false;
